@@ -1,0 +1,2 @@
+# BlazorTest
+Restarting blazor app
