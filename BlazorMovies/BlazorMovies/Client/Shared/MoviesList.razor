@@ -1,0 +1,39 @@
+﻿@if (movies == null)
+{
+<img src="https://media4.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="Alternate Text" />
+}
+else if (movies.Count == 0)
+{
+    <text> There are no records to show </text>
+}
+else
+{
+    @foreach (var item in movies)
+    {
+        <p>Title: <b>@item.Title</b></p>
+        <p>Release Date: @item.ReleaseDate.ToString("dd MM yyyy")</p>
+
+    }
+
+}
+@code {
+    List<Movie> movies;
+
+    protected async override Task OnInitializedAsync()
+    {
+        await Task.Delay(3000);
+        movies = new List<Movie>()
+        {
+
+            new Movie {Title = "Spider-Man",
+            ReleaseDate = new DateTime(2019, 7, 2) },
+        new Movie { Title = "Spider-Man",
+            ReleaseDate = new DateTime(2019, 7, 2) },
+        new Movie { Title = "Spider-Man",
+            ReleaseDate = new DateTime(2019, 7, 2) },
+        new Movie { Title = "Spider-Man",
+            ReleaseDate = new DateTime(2019, 7, 2) }
+        };
+
+    }
+}
