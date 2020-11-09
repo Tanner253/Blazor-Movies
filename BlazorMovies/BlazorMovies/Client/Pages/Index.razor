@@ -3,12 +3,35 @@
 <div>
     <h3>Movie</h3>
     @*Movies List component*@
-    <MoviesList/>
+    <MoviesList Movies="movies" >
+        <NullTemplate>
+            <span>This is loading...</span>
+        </NullTemplate>
+        <EmptyTemplate>
+            <span>No records</span>
+        </EmptyTemplate>
+    </MoviesList>
 
 
 
 </div>
 @code{
 
-    
+    private List<Movie> movies;
+    protected override void OnInitialized()
+    {
+        movies = new List<Movie>()
+{
+
+            new Movie {Title = "Spider-Man",
+            ReleaseDate = new DateTime(2019, 7, 2) },
+        new Movie { Title = "Spider-Man",
+            ReleaseDate = new DateTime(2019, 7, 2) },
+        new Movie { Title = "Spider-Man",
+            ReleaseDate = new DateTime(2019, 7, 2) },
+        new Movie { Title = "Spider-Man",
+            ReleaseDate = new DateTime(2019, 7, 2) }
+        };
+
+    }
 }
