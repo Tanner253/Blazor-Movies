@@ -3,14 +3,9 @@
 <div>
     <h3>Movie</h3>
     @*Movies List component*@
-    <MoviesList Movies="movies" >
-        <NullTemplate>
-            <span>This is loading...</span>
-        </NullTemplate>
-        <EmptyTemplate>
-            <span>No records</span>
-        </EmptyTemplate>
-    </MoviesList>
+    <MoviesList Movies="movies" />
+
+    
 
 
 
@@ -18,8 +13,9 @@
 @code{
 
     private List<Movie> movies;
-    protected override void OnInitialized()
+    protected async override Task OnInitializedAsync()
     {
+        await Task.Delay(2000);
         movies = new List<Movie>()
 {
 
