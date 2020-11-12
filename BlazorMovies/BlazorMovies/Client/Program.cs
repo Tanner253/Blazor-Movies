@@ -13,6 +13,7 @@ namespace BlazorMovies.Client
 {
     public class Program
     {
+        //startup equivilent
         public static async Task Main(string[] args)
         {
             var builder = WebAssemblyHostBuilder.CreateDefault(args);

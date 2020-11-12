@@ -10,7 +10,7 @@ namespace BlazorMovies.Client.Helpers
     {
         public static async ValueTask<bool> Confirm(this IJSRuntime js, string message)
         {
-          
+            //Generic confirm message
             return await js.InvokeAsync<bool>("confirm", message);
         }
         public static async ValueTask MyFunction(this IJSRuntime js, string message)

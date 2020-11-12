@@ -10,6 +10,7 @@ namespace BlazorMovies.Client.Helpers
     {
         public List<Movie> GetMovies()
         {
+            //return context request here
             return new List<Movie>()
 {
 
