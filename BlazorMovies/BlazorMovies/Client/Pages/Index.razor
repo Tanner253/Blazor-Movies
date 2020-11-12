@@ -1,8 +1,9 @@
 ﻿@page "/"
 @inject IRepository repository
+@using static BlazorMovies.Client.Shared.MainLayout;
 @*Html and C# can be written here*@
 <div>
-    <h3>Movie</h3>
+    <h3 style="color:@appState.Color; font-size:@appState.Size">Movie</h3>
     @*Movies List component*@
     <MoviesList  Movies="movies" />
 
@@ -12,10 +13,9 @@
 
 </div>
 @code{
-    //can invoke c# methods on this class and then manipulate output of thr movies list with @ref 
-    private MoviesList moviesList;
+    //can invoke c# methods on this class and then manipulate output of the movies list with @ref 
 
-
+    [CascadingParameter]public AppState appState { get; set; }
 
 
     private List<Movie> movies;
@@ -28,7 +28,7 @@
     //sample for add new movie request
     private void AddNewMovie()
     {
-        
+
         movies.Add(new Movie() { Title = "Movie Sampler", ReleaseDate = DateTime.Today });
     }
 }
