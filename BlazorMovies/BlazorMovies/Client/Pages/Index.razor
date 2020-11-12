@@ -4,14 +4,19 @@
 <div>
     <h3>Movie</h3>
     @*Movies List component*@
-    <MoviesList Movies="movies" />
+    <MoviesList  Movies="movies" />
 
     
-
+    <button @onclick="AddNewMovie">Add New Movie</button>
 
 
 </div>
 @code{
+    //can invoke c# methods on this class and then manipulate output of thr movies list with @ref 
+    private MoviesList moviesList;
+
+
+
 
     private List<Movie> movies;
     protected async override Task OnInitializedAsync()
@@ -19,5 +24,11 @@
         await Task.Delay(2000);
         movies = repository.GetMovies();
 
+    }
+    //sample for add new movie request
+    private void AddNewMovie()
+    {
+        
+        movies.Add(new Movie() { Title = "Movie Sampler", ReleaseDate = DateTime.Today });
     }
 }
