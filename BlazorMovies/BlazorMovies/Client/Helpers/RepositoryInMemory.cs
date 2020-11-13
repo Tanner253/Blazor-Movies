@@ -15,13 +15,13 @@ namespace BlazorMovies.Client.Helpers
 {
 
             new Movie {Title = "Spider-Man",
-            ReleaseDate = new DateTime(2019, 7, 2) },
-        new Movie { Title = "Spider-Man",
-            ReleaseDate = new DateTime(2019, 7, 2) },
-        new Movie { Title = "Spider-Man",
-            ReleaseDate = new DateTime(2019, 7, 2) },
-        new Movie { Title = "Spider-Man",
-            ReleaseDate = new DateTime(2019, 7, 2) }
+            ReleaseDate = new DateTime(2019, 7, 2), Poster = "https://image-cdn.essentiallysports.com/wp-content/uploads/20201001173349/Marvels-Spider-Man-Desktop-Wallpaper-3-3-1600x900.jpg" },
+        new Movie { Title = "Spider-Man2",
+            ReleaseDate = new DateTime(2019, 7, 2), Poster = "https://image-cdn.essentiallysports.com/wp-content/uploads/20201001173349/Marvels-Spider-Man-Desktop-Wallpaper-3-3-1600x900.jpg"  },
+        new Movie { Title = "Spider-Man3",
+            ReleaseDate = new DateTime(2019, 7, 2), Poster = "https://image-cdn.essentiallysports.com/wp-content/uploads/20201001173349/Marvels-Spider-Man-Desktop-Wallpaper-3-3-1600x900.jpg"  },
+        new Movie { Title = "Spider-Man4",
+            ReleaseDate = new DateTime(2019, 7, 2), Poster = "https://image-cdn.essentiallysports.com/wp-content/uploads/20201001173349/Marvels-Spider-Man-Desktop-Wallpaper-3-3-1600x900.jpg"  }
         };
         }
     }
