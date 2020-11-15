@@ -1,6 +1,6 @@
-﻿@page "/people/create"    
+﻿@page "/people/create/{PersonId:int}"    
 <h3>CreatePerson</h3>
 
 @code {
-
+    [Parameter] public int PersonId { get; set; }
 }
