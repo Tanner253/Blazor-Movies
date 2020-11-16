@@ -41,3 +41,10 @@ Microsoft Visual Studio Community 2019
 Tanner Percival
 
 ------------------------------
+NOTES
+
+with the @Page directive we can configure our compotents as routeables
+In the app.Razorfile we place configuration of the blazor router 
+with the NavigationManager we can redirect the users of the application to different places
+Reoute PArameters are used to read the values defined in the URL from the component
+NavLink is a useful component to define menu links
