@@ -1,4 +1,5 @@
 ﻿@page "/movies/search"
+@inject IRepository Repository
 <h3>MovieFilter</h3>
 
 <div class="form-inline mb-2">
@@ -34,27 +35,42 @@
     <button type="button" class="btn btn-primary mb-2 mx-sm-3" @onclick="SearchForMovies">Filter</button>
     <button type="button" class="btn btn-danger mb-2 " @onclick="Clear">Clear</button>
 </div>
+
+<MoviesList Movies="Movies">
+
+</MoviesList>
 @code {
+    private List<Movie> Movies;
     string title = "";
     string selectedGenre = "0";
     bool upcomingReleases = false;
     bool inTheaters = false;
 
-    private List<Genre> Genres = new List<Genre>();
+    private List<Genre> Genres = new List<Genre>() { new Genre() { ID = 1, Name = "Action" }, new Genre() { ID = 2, Name = "Comedy" }};
+    protected override void OnInitialized()
+    {
+        Movies = Repository.GetMovies();
+    }
     private void SearchForMovies()
     {
-        Console.WriteLine($"Title: {title}");
+        Movies = Movies.Where(x => x.Title.Contains(title)).ToList();
+        Console.WriteLine($"title: {title}");
+
     }
     private void Clear()
     {
-
+        Movies = Repository.GetMovies();
+        title = "";
+        selectedGenre = "0";
+        upcomingReleases = false;
+        inTheaters = false;
     }
 
     private void TitleKeyPress(KeyboardEventArgs e)
     {
         if (e.Key == "Enter")
         {
-
+            SearchForMovies();
         }
     }
 }
