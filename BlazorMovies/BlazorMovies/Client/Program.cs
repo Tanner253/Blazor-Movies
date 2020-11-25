@@ -8,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using BlazorMovies.Client.Helpers;
+using Tewr.Blazor.FileReader;
 
 namespace BlazorMovies.Client
 {
@@ -28,8 +29,8 @@ namespace BlazorMovies.Client
         private static void ConfigureServices(IServiceCollection services)
         {
             services.AddOptions(); //authorization system
-          
             services.AddTransient<IRepository, RepositoryInMemory>();
+            services.AddFileReaderService(options => options.UseWasmSharedBuffer = true);
 
 
         }
