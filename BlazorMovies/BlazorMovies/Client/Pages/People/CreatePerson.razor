@@ -1,6 +1,11 @@
-﻿@page "/people/create/{PersonId:int}"    
+﻿@page "/people/create"    
 <h3>CreatePerson</h3>
-
+<PersonForm Person="Person" OnValidSubmit="Create" />
 @code {
+    Person Person = new Person();
     [Parameter] public int PersonId { get; set; }
+    private void Create()
+    {
+        Console.WriteLine("Creating person");
+    }
 }
