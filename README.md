@@ -14,7 +14,7 @@ Project blazor
 
 ---------------------------------
 ## Web Application
-My progression through a udemy blazor course.
+My progression through a udemy blazor course. smoothly.
 
 ---------------------------------
 
