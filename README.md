@@ -41,7 +41,8 @@ Microsoft Visual Studio Community 2019
 Tanner Percival
 
 ------------------------------
-NOTES __---___---__--__--___-------_
+NOTES __---___---__--__--___-------_----
+
 
 with the @Page directive we can configure our compotents as routeables
 In the app.Razorfile we place configuration of the blazor router 
