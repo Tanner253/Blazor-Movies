@@ -48,3 +48,4 @@ In the app.Razorfile we place configuration of the blazor router
 with the NavigationManager we can redirect the users of the application to different places
 Reoute PArameters are used to read the values defined in the URL from the component
 NavLink is a useful component to define menu links
+bow
