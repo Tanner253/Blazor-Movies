@@ -5,7 +5,7 @@ After that i want to proceed to work on a public facing website to get revenue f
 Wroking through course daily
 the tutorials are so monotone D:
 I really need to give this readme an overhaul and template 
-Blazor update delayed temporarily git commiting 
+Blazor update delayed temporarily git commiting -
 =========================================================================================
 Project blazor
 
@@ -41,7 +41,8 @@ Microsoft Visual Studio Community 2019
 Tanner Percival
 
 ------------------------------
-NOTES
+NOTES __---___---__--__--___-------_----
+
 
 with the @Page directive we can configure our compotents as routeables
 In the app.Razorfile we place configuration of the blazor router 
