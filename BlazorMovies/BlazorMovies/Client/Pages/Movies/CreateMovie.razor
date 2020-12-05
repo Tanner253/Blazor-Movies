@@ -1,9 +1,15 @@
 ﻿@page "/movies/create"
 @inject NavigationManager navigationManager
 <h3>Create Movie</h3>
-<MovieForm Movie="Movie" OnValidSubmit="SaveMovie"/>
+<MovieForm Movie="Movie" OnValidSubmit="SaveMovie" NotSelectedGenres="NotSelectedGenres"/>
 @code {
     private Movie Movie = new Movie();
+    private List<Genre> NotSelectedGenres = new List<Genre>()
+    {
+        new Genre(){ID = 1, Name = "Action"},
+        new Genre(){ID = 2, Name = "drama"},
+        new Genre(){ID = 3, Name = "comedy"}
+    };
     private void SaveMovie()
     {
         //saving movie...

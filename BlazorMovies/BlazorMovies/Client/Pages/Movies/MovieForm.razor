@@ -32,16 +32,29 @@
         <InputImage Label="Picture" OnSelectedImage="PosterSelected" ImageURL="@imageURL" />
     </div>
     <div class="form-group form-markdown">
-        <InputMarkdown @bind-Value="Movie.Summary" Label="Biography" For="@(() => Movie.Summary)" />
+        <InputMarkdown @bind-Value="Movie.Summary" Label="Summary" For="@(() => Movie.Summary)" />
+    </div>
+    <div class="form-group">
+        <label>Genres:</label>
+        <div>
+            <MultipleSelector Selected="Selected" NoSelected="NotSelected"></MultipleSelector>
+        </div>
     </div>
     <button class="btn btn-success" type="submit">Save Changes</button>
 </EditForm>
 @code {
     [Parameter] public Movie Movie { get; set; }
     [Parameter] public EventCallback OnValidSubmit { get; set; }
+    [Parameter] public List<Genre> SelectedGenres { get; set; } = new List<Genre>();
+    [Parameter] public List<Genre> NotSelectedGenres { get; set; }
+
+    private List<MultipleSelectorModel> Selected = new List<MultipleSelectorModel>();
+    private List<MultipleSelectorModel> NotSelected = new List<MultipleSelectorModel>();
     private string imageURL;
     protected override void OnInitialized()
     {
+        Selected = SelectedGenres.Select(x => new MultipleSelectorModel(x.ID.ToString(), x.Name)).ToList();
+        NotSelected = NotSelectedGenres.Select(x => new MultipleSelectorModel(x.ID.ToString(), x.Name)).ToList();
         if (!string.IsNullOrEmpty(Movie.Poster))
         {
             imageURL = Movie.Poster;
