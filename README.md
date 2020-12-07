@@ -10,7 +10,7 @@ Blazor update delayed temporarily git commiting -
 Project blazor
 
 ------------------- ---------------------
-
+-
 
 ---------------------------------
 ## Web Application
